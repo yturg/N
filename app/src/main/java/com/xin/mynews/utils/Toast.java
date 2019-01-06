@@ -81,11 +81,10 @@ public class Toast {
      *
      * @param context
      * @param message
-     * @param duration
      */
-    public static void show(Context context, CharSequence message, int duration) {
+    public static void show(Context context, CharSequence message) {
         if (isShow)
-            android.widget.Toast.makeText(context, message, duration).show();
+            android.widget.Toast.makeText(context, message, android.widget.Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -93,11 +92,10 @@ public class Toast {
      *
      * @param context
      * @param message
-     * @param duration
      */
-    public static void show(Context context, int message, int duration) {
+    public static void show(Context context, int message) {
         if (isShow)
-            android.widget.Toast.makeText(context, message, duration).show();
+            android.widget.Toast.makeText(context, message, android.widget.Toast.LENGTH_LONG).show();
     }
 
 }

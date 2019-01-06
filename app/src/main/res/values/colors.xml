@@ -6,4 +6,7 @@
 
     <color name="tab_unselect">#a3a3a3</color>
     <color name="news_tv_source_color">#a3a3a3</color>
+
+    <color name="bg_color">#F5F5F5</color>
+    <color name="hint_text_color">#979797</color>
 </resources>

@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xin.mynews">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".DavyNewsApplication"
@@ -15,45 +15,56 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoBar"/>
+            android:theme="@style/AppTheme.NoBar" />
 
-        <activity android:name=".ui.news.ArticleReadActivity"
+        <activity
+            android:name=".ui.news.ArticleReadActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <activity android:name=".ui.news.AdvertActivity"
+        <activity
+            android:name=".ui.news.AdvertActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <activity android:name=".ui.news.ImageBrowseActivity"
+        <activity
+            android:name=".ui.news.ImageBrowseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
-        <activity android:name=".ui.jiandan.ReadActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+        <activity
+            android:name=".ui.jiandan.ReadActivity"
             android:hardwareAccelerated="true"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity android:name=".ui.jiandan.ImageBrowseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden"/>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".ui.jiandan.ImageBrowseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".activity.EleSearchActivity"
+            android:theme="@style/AppTheme.Transparent.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
     </application>
 
 </manifest>

@@ -22,4 +22,11 @@
         <item name="android:windowExitAnimation">@anim/dialog_bottom_slide_out</item>
     </style>
 
+    <declare-styleable name="CustomTopBar">
+        <attr name="action_title" format="string"/>
+        <attr name="action_back_text" format="string"/>
+        <attr name="action_menu" format="reference|string"/>
+        <attr name="action_textColor" format="reference|color"/>
+    </declare-styleable>
+
 </resources>

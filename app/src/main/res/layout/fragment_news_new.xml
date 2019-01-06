@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        android:id="@+id/fake_status_bar"
+    <com.xin.mynews.widget.CustomTopBar
+        android:id="@+id/action_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/statusbar_view_height"
-        android:background="@color/colorPrimary" />
+        android:layout_height="46dp"
+        app:action_back_text="返回"
+        app:action_menu="更多"
+        app:action_textColor="#000000"
+        app:action_title="主页" />
+
+    <TextView
+        android:id="@+id/search_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/search_icon_png"
+        android:gravity="center"
+        android:background="@drawable/search_bg"
+        android:hint="大家都在搜: 开心" />
 
     <RelativeLayout
         android:layout_width="match_parent"
