@@ -4,7 +4,7 @@ import com.xin.mynews.ui.jiandan.JianDanDetailFragment;
 import com.xin.mynews.ui.news.ArticleReadActivity;
 import com.xin.mynews.ui.news.DetailFragment;
 import com.xin.mynews.ui.news.ImageBrowseActivity;
-import com.xin.mynews.ui.news.NewsFragment;
+import com.xin.mynews.ui.news.MainFragment;
 import com.xin.mynews.ui.video.DetailsFragment;
 import com.xin.mynews.ui.video.VideosFragment;
 
@@ -17,7 +17,7 @@ import dagger.Component;
 @Component(dependencies = ApplicationComponent.class)
 public interface HttpComponent {
 
-    void inject(NewsFragment newsFragment);
+    void inject(MainFragment mainFragment);
 
     void inject(DetailFragment detailFragment);
 

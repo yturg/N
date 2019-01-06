@@ -31,7 +31,7 @@ import butterknife.BindView;
  * author: zxj
  * date: 18/7/2
  */
-public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsContract.View {
+public class MainFragment extends BaseFragment<NewsPresenter> implements NewsContract.View {
 
     @BindView(R.id.viewpager)
     CustomViewPager mViewpager;
@@ -48,9 +48,9 @@ public class NewsFragment extends BaseFragment<NewsPresenter> implements NewsCon
 
     private ChannelPagerAdapter mChannelPagerAdapter;
 
-    public static NewsFragment newInstance() {
+    public static MainFragment newInstance() {
         Bundle args = new Bundle();
-        NewsFragment fragment = new NewsFragment();
+        MainFragment fragment = new MainFragment();
         fragment.setArguments(args);
         return fragment;
     }

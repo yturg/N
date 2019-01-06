@@ -8,7 +8,7 @@ import com.xin.mynews.component.ApplicationComponent;
 import com.xin.mynews.ui.base.BaseActivity;
 import com.xin.mynews.ui.base.SupportFragment;
 import com.xin.mynews.ui.jiandan.JanDanFragment;
-import com.xin.mynews.ui.news.NewsFragment;
+import com.xin.mynews.ui.news.MainFragment;
 import com.xin.mynews.ui.personal.PersonalFragment;
 import com.xin.mynews.ui.video.VideosFragment;
 import com.xin.mynews.utils.StatusBarUtil;
@@ -18,7 +18,6 @@ import com.xin.mynews.widget.BottomBarTab;
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
-
 
     @BindView(R.id.contentContainer)
     FrameLayout mContentContainer;
@@ -46,7 +45,7 @@ public class MainActivity extends BaseActivity {
     public void bindView(View view, Bundle savedInstanceState) {
         StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this, 0, null);
         if(savedInstanceState == null){
-            mFragments[0] = NewsFragment.newInstance();
+            mFragments[0] = MainFragment.newInstance();
             mFragments[1] = VideosFragment.newInstance();
             mFragments[2] = JanDanFragment.newInstance();
             mFragments[3] = PersonalFragment.newInstance();
@@ -58,7 +57,7 @@ public class MainActivity extends BaseActivity {
                     mFragments[3]);
         }else{
 
-            mFragments[0] = findFragment(NewsFragment.class);
+            mFragments[0] = findFragment(MainFragment.class);
             mFragments[1] = findFragment(VideosFragment.class);
             mFragments[2] = findFragment(JanDanFragment.class);
             mFragments[3] = findFragment(PersonalFragment.class);
