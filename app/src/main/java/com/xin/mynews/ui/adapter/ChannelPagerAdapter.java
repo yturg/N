@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.xin.mynews.bean.Channel;
 import com.xin.mynews.ui.base.BaseFragment;
-import com.xin.mynews.ui.news.DetailFragment;
+import com.xin.mynews.ui.main.DetailFragment;
 
 import java.util.List;
 

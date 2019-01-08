@@ -22,7 +22,7 @@ public class BottomBarTab extends LinearLayout {
     private static boolean ifshow = false;
 
     public BottomBarTab(Context context, @DrawableRes int icon, String title) {
-        this(context, null, icon,  title);
+        this(context, null, icon, title);
     }
 
 
@@ -37,12 +37,7 @@ public class BottomBarTab extends LinearLayout {
 
     private void init(Context context, int icon, String title) {
         mContext = context;
-        this.icon =icon;
-       /* TypedArray typedArray = context.obtainStyledAttributes(new int[]{R.attr.selectableItemBackgroundBorderless});
-        Drawable drawable = typedArray.getDrawable(0);
-        setBackgroundDrawable(drawable);
-        typedArray.recycle();*/
-
+        this.icon = icon;
         setOrientation(LinearLayout.VERTICAL);
         mIcon = new ImageView(context);
         int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
@@ -52,10 +47,8 @@ public class BottomBarTab extends LinearLayout {
         mIcon.setImageResource(icon);
         mIcon.setLayoutParams(params);
 
-        // mIcon.setColorFilter(ContextCompat.getColor(context, R.color.tab_unselect));
         LayoutParams textViewParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         textViewParams.gravity = Gravity.CENTER_HORIZONTAL;
-        // textViewParams.addRule(ALIGN_PARENT_BOTTOM);
         textViewParams.topMargin = ContextUtils.dip2px(context, 2.5f);
         textViewParams.bottomMargin = ContextUtils.dip2px(context, 2.5f);
         mTextView = new TextView(context);
@@ -73,7 +66,6 @@ public class BottomBarTab extends LinearLayout {
         if (selected) {
             mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.colorPrimary));
             mTextView.setTextColor(ContextCompat.getColor(mContext, R.color.colorPrimary));
-
         } else {
             mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.tab_unselect));
             mTextView.setTextColor(ContextCompat.getColor(mContext, R.color.tab_unselect));

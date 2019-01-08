@@ -2,7 +2,7 @@ package com.xin.mynews.module;
 
 import android.content.Context;
 
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 
 import dagger.Module;
 import dagger.Provides;
@@ -22,9 +22,9 @@ public class ApplicationModule {
     }
 
    @Provides
-   DavyNewsApplication provideApplication(){
+   QiYueApplication provideApplication(){
 
-        return (DavyNewsApplication) mContext.getApplicationContext();
+        return (QiYueApplication) mContext.getApplicationContext();
    }
 
    @Provides

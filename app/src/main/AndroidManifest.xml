@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".DavyNewsApplication"
+        android:name=".QiYueApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,38 +32,38 @@
             android:theme="@style/AppTheme.NoBar" />
 
         <activity
-            android:name=".ui.news.ArticleReadActivity"
+            android:name=".ui.main.ArticleReadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".ui.main.AdvertActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".ui.main.ImageBrowseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
-            android:name=".ui.news.AdvertActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity
-            android:name=".ui.news.ImageBrowseActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-
-        <activity
-            android:name=".ui.jiandan.ReadActivity"
+            android:name=".ui.message.ReadActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
         <activity
-            android:name=".ui.jiandan.ImageBrowseActivity"
+            android:name=".ui.message.ImageBrowseActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
-            android:name=".activity.EleSearchActivity"
-            android:theme="@style/AppTheme.Transparent.NoActionBar"
+            android:name=".activity.SearchActivity"
+            android:theme="@style/AppTheme.NoBar"
             android:windowSoftInputMode="stateHidden" />
     </application>
 

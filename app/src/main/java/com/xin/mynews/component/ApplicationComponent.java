@@ -1,7 +1,7 @@
 package com.xin.mynews.component;
 
 
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.module.ApplicationModule;
 import com.xin.mynews.module.HttpModule;
 import com.xin.mynews.net.JianDanApi;
@@ -16,7 +16,7 @@ import dagger.Component;
 @Component(modules = {ApplicationModule.class, HttpModule.class})
 public interface ApplicationComponent {
 
-    DavyNewsApplication getApplication();
+    QiYueApplication getApplication();
 
     NewsApi getNewsApi();
 

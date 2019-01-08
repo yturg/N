@@ -2,7 +2,7 @@ package com.xin.mynews.net;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.bean.Constants;
 import com.xin.mynews.utils.NetUtil;
 
@@ -44,13 +44,13 @@ public class RetrofitConfig {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            if (!NetUtil.isNetworkAvailable(DavyNewsApplication.getContext())) {
+            if (!NetUtil.isNetworkAvailable(QiYueApplication.getContext())) {
                 request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
                 Log.e(TAG, "no network");
             }
             Response originalResponse = chain.proceed(request);
 
-            if (NetUtil.isNetworkAvailable(DavyNewsApplication.getContext())) {
+            if (NetUtil.isNetworkAvailable(QiYueApplication.getContext())) {
                 //有网的时候读接口上的@Headers里的配置，你可以在这里进行统一的设置
                 String cacheControl = request.cacheControl().toString();
                 return originalResponse.newBuilder()
@@ -89,6 +89,7 @@ public class RetrofitConfig {
             return chain.proceed(request);
         }
     };
+
     /**
      * 打印返回的json数据拦截器
      */

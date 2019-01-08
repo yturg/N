@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 import com.xin.mynews.component.ApplicationComponent;
 import com.xin.mynews.ui.base.BaseActivity;
 import com.xin.mynews.ui.base.SupportFragment;
-import com.xin.mynews.ui.jiandan.JanDanFragment;
-import com.xin.mynews.ui.news.MainFragment;
+import com.xin.mynews.ui.message.MessageFragment;
+import com.xin.mynews.ui.main.MainFragment;
 import com.xin.mynews.ui.personal.PersonalFragment;
 import com.xin.mynews.ui.video.VideosFragment;
 import com.xin.mynews.utils.StatusBarUtil;
@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.contentContainer)
     FrameLayout mContentContainer;
-    @BindView(R.id.bottomBar)
+    @BindView(R.id.main_bottom_tab)
     BottomBar mBottomBar;
 
     private SupportFragment[] mFragments = new SupportFragment[4];
@@ -44,34 +44,32 @@ public class MainActivity extends BaseActivity {
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
         StatusBarUtil.setTranslucentForImageViewInFragment(MainActivity.this, 0, null);
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             mFragments[0] = MainFragment.newInstance();
             mFragments[1] = VideosFragment.newInstance();
-            mFragments[2] = JanDanFragment.newInstance();
+            mFragments[2] = MessageFragment.newInstance();
             mFragments[3] = PersonalFragment.newInstance();
-
-            getSupportDelegate().loadMultipleRootFragment(R.id.contentContainer,0,
+            getSupportDelegate().loadMultipleRootFragment(R.id.contentContainer, 0,
                     mFragments[0],
                     mFragments[1],
                     mFragments[2],
                     mFragments[3]);
-        }else{
-
+        } else {
             mFragments[0] = findFragment(MainFragment.class);
             mFragments[1] = findFragment(VideosFragment.class);
-            mFragments[2] = findFragment(JanDanFragment.class);
+            mFragments[2] = findFragment(MessageFragment.class);
             mFragments[3] = findFragment(PersonalFragment.class);
         }
 
-        mBottomBar.addItem(new BottomBarTab(this,R.mipmap.ic_news,"新闻"))
-                .addItem(new BottomBarTab(this,R.mipmap.ic_video,"视频"))
-                .addItem(new BottomBarTab(this,R.mipmap.ic_jiandan,"煎蛋"))
-                .addItem(new BottomBarTab(this,R.mipmap.ic_my,"我的"));
+        mBottomBar.addItem(new BottomBarTab(this, R.drawable.bottom_tab_main, "新闻"))
+                .addItem(new BottomBarTab(this, R.mipmap.ic_video, "视频"))
+                .addItem(new BottomBarTab(this, R.mipmap.ic_jiandan, "煎蛋"))
+                .addItem(new BottomBarTab(this, R.mipmap.ic_my, "我的"));
 
         mBottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, int prePosition) {
-                getSupportDelegate().showHideFragment(mFragments[position],mFragments[prePosition]);
+                getSupportDelegate().showHideFragment(mFragments[position], mFragments[prePosition]);
             }
 
             @Override
@@ -86,8 +84,6 @@ public class MainActivity extends BaseActivity {
         });
 
     }
-
-
 
     @Override
     public void initData() {

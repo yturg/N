@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/title_main"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/search_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="2dp"
+        android:drawableStart="@drawable/search_icon_png"
+        android:gravity="center"
+        android:background="@drawable/search_bg"
+        android:hint="大家都在搜: 开心" />
+
+    <com.xin.mynews.widget.CustomViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

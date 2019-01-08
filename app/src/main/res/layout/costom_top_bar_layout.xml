@@ -3,32 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="48dp">
 
-    <TextView
-        android:id="@+id/action_bar_back"
+    <Button
+        android:id="@+id/title_bar_left"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="16sp"
-        android:drawableStart="@drawable/go_back"
-        android:gravity="center_vertical" />
-
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:background="@null"
+        android:minHeight="45dp"
+        android:minWidth="45dp"
+        android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/action_bar_title"
+        android:id="@+id/title_bar_title"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="18sp"
-        android:text=""/>
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/action_bar_menu"
+    <Button
+        android:id="@+id/title_bar_right"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:gravity="center_vertical"
-        android:layout_alignParentEnd="true"
-        android:textSize="18sp"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="7dp"
+        android:background="@null"
+        android:minHeight="45dp"
+        android:minWidth="45dp"
+        android:textSize="14sp" />
 
 </merge>

@@ -1,10 +1,11 @@
 package com.xin.mynews.component;
 
-import com.xin.mynews.ui.jiandan.JianDanDetailFragment;
-import com.xin.mynews.ui.news.ArticleReadActivity;
-import com.xin.mynews.ui.news.DetailFragment;
-import com.xin.mynews.ui.news.ImageBrowseActivity;
-import com.xin.mynews.ui.news.MainFragment;
+import com.xin.mynews.ui.message.MessageDetailFragment;
+import com.xin.mynews.ui.main.ArticleReadActivity;
+import com.xin.mynews.ui.main.DetailFragment;
+import com.xin.mynews.ui.main.HomeFragment;
+import com.xin.mynews.ui.main.ImageBrowseActivity;
+import com.xin.mynews.ui.main.MainFragment;
 import com.xin.mynews.ui.video.DetailsFragment;
 import com.xin.mynews.ui.video.VideosFragment;
 
@@ -19,6 +20,8 @@ public interface HttpComponent {
 
     void inject(MainFragment mainFragment);
 
+    void inject(HomeFragment homeFragment);
+
     void inject(DetailFragment detailFragment);
 
     void inject(ArticleReadActivity articleReadActivity);
@@ -29,5 +32,5 @@ public interface HttpComponent {
 
     void inject(DetailsFragment detailsFragment);
 
-    void inject(JianDanDetailFragment jianDanDetailFragment);
+    void inject(MessageDetailFragment messageDetailFragment);
 }

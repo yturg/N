@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.R;
 import com.xin.mynews.ui.inter.IBase;
 import com.xin.mynews.utils.Toast;
@@ -62,7 +62,7 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initInjector(DavyNewsApplication.getInstance().getApplicationComponent());
+        initInjector(QiYueApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(view,savedInstanceState);
         initStateView();
@@ -141,7 +141,7 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     }
 
     protected void Toast(String string){
-        Toast.showShort(DavyNewsApplication.getContext(),string);
+        Toast.showShort(QiYueApplication.getContext(),string);
     }
 
     @Override

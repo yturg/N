@@ -44,10 +44,4 @@ public class PersonalFragment extends BaseFragment{
 
     }
 
-    @OnClick(R.id.tv_github)
-    public void onViewClicked(){
-        Uri webUrl = Uri.parse("https://github.com/Davy1023");
-        Intent intent = new Intent(Intent.ACTION_VIEW,webUrl);
-        getActivity().startActivity(intent);
-    }
 }

@@ -14,10 +14,10 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.R;
 import com.xin.mynews.bean.JdDetailBean;
-import com.xin.mynews.ui.jiandan.ImageBrowseActivity;
+import com.xin.mynews.ui.message.ImageBrowseActivity;
 import com.xin.mynews.utils.ContextUtils;
 import com.xin.mynews.utils.DateUtil;
 import com.xin.mynews.utils.ImageLoaderUtil;
@@ -44,8 +44,8 @@ public class BroedImageAdapter extends BaseMultiItemQuickAdapter<JdDetailBean.Co
 
     public BroedImageAdapter(Activity context, List<JdDetailBean.CommentsBean> data) {
         super(data);
-        addItemType(JdDetailBean.CommentsBean.TYPE_MULTIPLE, R.layout.item_jandan_pic);
-        addItemType(JdDetailBean.CommentsBean.TYPE_SINGLE,R.layout.item_jandan_pic_single);
+        addItemType(JdDetailBean.CommentsBean.TYPE_MULTIPLE, R.layout.item_msg_pic);
+        addItemType(JdDetailBean.CommentsBean.TYPE_SINGLE,R.layout.item_msg_pic_single);
         this.mContext = context;
     }
 
@@ -108,7 +108,7 @@ public class BroedImageAdapter extends BaseMultiItemQuickAdapter<JdDetailBean.Co
 
             case JdDetailBean.CommentsBean.TYPE_SINGLE:
                 ShowMaxImageView showMaxImageView = viewHolder.getView(R.id.img);
-               showMaxImageView.getLayoutParams().height = ContextUtils.dip2px(DavyNewsApplication.getContext(),250);
+               showMaxImageView.getLayoutParams().height = ContextUtils.dip2px(QiYueApplication.getContext(),250);
 
                showMaxImageView.setOnClickListener(new View.OnClickListener() {
                    @Override
@@ -123,8 +123,8 @@ public class BroedImageAdapter extends BaseMultiItemQuickAdapter<JdDetailBean.Co
                             @Override
                             public void onResourceReady(Drawable resource, @Nullable Transition<? super Drawable> transition) {
                                 super.onResourceReady(resource, transition);
-                                int width =ContextUtils.getSreenWidth(DavyNewsApplication.getContext());
-                                int height = ContextUtils.getSreenHeight(DavyNewsApplication.getContext());
+                                int width =ContextUtils.getSreenWidth(QiYueApplication.getContext());
+                                int height = ContextUtils.getSreenHeight(QiYueApplication.getContext());
                                 float sal = height / width;
                                 int actualHeight = (int) Math.ceil(sal * resource.getIntrinsicWidth());
                                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,actualHeight);

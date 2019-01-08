@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.R;
 import com.xin.mynews.ui.inter.IBase;
 import com.xin.mynews.widget.MultiStateView;
@@ -40,7 +40,7 @@ public abstract class BaseActivity<T1 extends BaseContract.BasePresenter> extend
         super.onCreate(savedInstanceState);
         mRootView = createView(null, null, savedInstanceState);
         setContentView(mRootView);
-        initInjector(DavyNewsApplication.getInstance().getApplicationComponent());
+        initInjector(QiYueApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(mRootView, savedInstanceState);
         initStateView();
@@ -66,7 +66,9 @@ public abstract class BaseActivity<T1 extends BaseContract.BasePresenter> extend
     }
 
     private void initStateView() {
-        if (mSimpleMultiStateView == null) return;
+        if (mSimpleMultiStateView == null) {
+            return;
+        }
         mSimpleMultiStateView.setEmptyResource(R.layout.view_empty)
                 .setRetryResource(R.layout.view_retry)
                 .setLoadingResource(R.layout.view_loading)
@@ -106,9 +108,7 @@ public abstract class BaseActivity<T1 extends BaseContract.BasePresenter> extend
     /**
      * 是否支持滑动返回。这是在父类中默认返回true支持滑动返回，如果在某个界面不想支持滑动返回重写该方法返回false即可
      *
-     * @return
      */
-
     @Override
     public boolean isSupportSwipeBack() {
         return true;

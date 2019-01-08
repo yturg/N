@@ -1,6 +1,6 @@
 package com.xin.mynews.module;
 
-import com.xin.mynews.DavyNewsApplication;
+import com.xin.mynews.QiYueApplication;
 import com.xin.mynews.net.ApiConstants;
 import com.xin.mynews.net.JianDanApi;
 import com.xin.mynews.net.JianDanApiService;
@@ -29,7 +29,7 @@ public class HttpModule {
     @Provides
     OkHttpClient.Builder provideOkhttpClient(){
 
-        Cache cache = new Cache(new File(DavyNewsApplication.getContext().getCacheDir(),"NewHttpCache"),1024 * 1024 * 100);
+        Cache cache = new Cache(new File(QiYueApplication.getContext().getCacheDir(),"NewHttpCache"),1024 * 1024 * 100);
         return new OkHttpClient.Builder().cache(cache)
                 .retryOnConnectionFailure(true)
                 .addInterceptor(RetrofitConfig.sLoggingInterceptor)
